@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saffron &amp; Sage — Event Enquiry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#FBF6EC;color:#26301F;font-family:'DM Sans',sans-serif;padding:66px 20px 90px}
+  a.back{position:fixed;top:16px;left:16px;z-index:20;font-size:11.5px;color:#7C8C5A;text-decoration:none;letter-spacing:.05em;border:1px solid #E0D6BF;background:#fff;padding:8px 14px;border-radius:100px}
+  a.back:hover{color:#26301F;border-color:#7C8C5A}
+  .inner{max-width:600px;margin:0 auto}
+
+  .crest{text-align:center;margin-bottom:34px}
+  .crest .mark{font-family:'Fraunces',serif;font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:#7C8C5A}
+  .rule{width:44px;height:1px;background:#C5B48D;margin:14px auto}
+
+  h1{font-family:'Fraunces',serif;font-size:clamp(30px,6vw,43px);font-weight:600;line-height:1.14;text-align:center;letter-spacing:-.01em;margin-bottom:14px}
+  .lede{text-align:center;font-size:15px;line-height:1.6;color:#5D6A50;max-width:390px;margin:0 auto 40px}
+
+  .card{background:#fff;border:1px solid #EAE0CB;border-radius:5px;padding:32px 28px;margin-bottom:16px}
+  @media(max-width:520px){.card{padding:26px 20px}}
+  .card-h{font-family:'Fraunces',serif;font-size:19px;font-weight:600;margin-bottom:4px}
+  .card-s{font-size:13px;color:#8A9478;margin-bottom:24px}
+
+  .f{margin-bottom:22px}
+  .f:last-child{margin-bottom:0}
+  label.lbl{display:block;font-size:12.5px;font-weight:700;letter-spacing:.03em;margin-bottom:8px;color:#3E4A34}
+
+  input[type=text],input[type=email],input[type=tel],input[type=date],input[type=number],textarea{
+    width:100%;font-family:'DM Sans',sans-serif;font-size:15px;padding:13px 15px;
+    border:1px solid #E0D6BF;border-radius:4px;background:#FDFBF6;color:#26301F;
+    outline:none;resize:vertical;transition:.16s}
+  input:focus,textarea:focus{border-color:#7C8C5A;background:#fff}
+  input::placeholder,textarea::placeholder{color:#B3BAA6}
+
+  select{
+    width:100%;-webkit-appearance:none;appearance:none;
+    background-color:#FDFBF6;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'><path d='M1 1l6 6 6-6' stroke='%237C8C5A' stroke-width='2' fill='none' stroke-linecap='round'/></svg>");
+    background-repeat:no-repeat;background-position:right 14px center;
+    border:1px solid #E0D6BF;border-radius:4px;color:#26301F;
+    font-family:'DM Sans',sans-serif;font-size:15px;padding:13px 42px 13px 15px;
+    outline:none;cursor:pointer}
+  select:focus{border-color:#7C8C5A;background-color:#fff}
+
+  .hint{font-size:12px;color:#98A188;margin-top:6px;font-style:italic}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:520px){.two{grid-template-columns:1fr}}
+
+  .menu{display:grid;gap:9px}
+  .m{position:relative;display:block;cursor:pointer}
+  .m input{position:absolute;opacity:0;width:0;height:0}
+  .m .face{display:flex;align-items:center;gap:12px;border:1px solid #E0D6BF;border-radius:4px;
+    padding:14px 15px;font-size:14px;background:#FDFBF6;transition:.16s}
+  .m:hover .face{border-color:#C5B48D}
+  .m .tick{width:17px;height:17px;border:1px solid #C5B48D;border-radius:50%;flex-shrink:0;transition:.16s;position:relative}
+  .m input:checked + .face{border-color:#7C8C5A;background:#F5F8EF}
+  .m input:checked + .face .tick{background:#7C8C5A;border-color:#7C8C5A}
+  .m input:checked + .face .tick::after{content:'';position:absolute;left:5px;top:2px;width:4px;height:8px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+  .m input:focus-visible + .face{outline:2px solid #7C8C5A;outline-offset:2px}
+  .m .price{margin-left:auto;font-family:'Fraunces',serif;font-size:13px;color:#8A9478;white-space:nowrap}
+
+  .m .tick.sq{border-radius:4px}
+  .m input:checked + .face .tick.sq::after{left:5px;top:1px}
+
+  .go{width:100%;margin-top:10px;background:#26301F;color:#FBF6EC;border:none;border-radius:4px;
+    padding:17px;font-family:'Fraunces',serif;font-size:15px;font-weight:600;letter-spacing:.02em;cursor:pointer;transition:.16s}
+  .go:hover{background:#354328}
+  .note{text-align:center;font-size:12px;color:#98A188;margin-top:16px}
+</style>
+</head>
+<body>
+<a class="back" href="index.html">← All samples</a>
+
+<form class="inner" onsubmit="return false">
+  <div class="crest">
+    <div class="mark">Saffron &amp; Sage</div>
+    <div class="rule"></div>
+  </div>
+
+  <h1>Let's plan your table.</h1>
+  <p class="lede">Share a few details about your event and our head chef will send a tailored menu proposal within two working days.</p>
+
+  <div class="card">
+    <div class="card-h">About your event</div>
+    <div class="card-s">The essentials, so we can check availability.</div>
+    <div class="two">
+      <div class="f"><label class="lbl" for="nm">Your name</label><input id="nm" type="text" placeholder="Amelia Rousseau"></div>
+      <div class="f"><label class="lbl" for="ph">Phone</label><input id="ph" type="tel" placeholder="+33 6 12 34 56 78"></div>
+    </div>
+    <div class="f"><label class="lbl" for="em">Email</label><input id="em" type="email" placeholder="amelia@email.com"></div>
+    <div class="two">
+      <div class="f"><label class="lbl" for="dt">Event date</label><input id="dt" type="date"></div>
+      <div class="f"><label class="lbl" for="gs">Guests</label><input id="gs" type="number" placeholder="80"><div class="hint">An estimate is fine for now.</div></div>
+    </div>
+    <div class="f">
+      <label class="lbl" for="ty">Type of event</label>
+      <select id="ty">
+        <option>Wedding</option>
+        <option>Corporate dinner</option>
+        <option>Private celebration</option>
+        <option>Product launch</option>
+        <option>Other</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-h">Choose a menu style</div>
+    <div class="card-s">All menus are seasonal and adapted to dietary needs.</div>
+    <div class="menu">
+      <label class="m"><input type="radio" name="menu" checked><span class="face"><span class="tick"></span>Seated three-course dinner<span class="price">from €48 pp</span></span></label>
+      <label class="m"><input type="radio" name="menu"><span class="face"><span class="tick"></span>Grazing tables &amp; canapés<span class="price">from €32 pp</span></span></label>
+      <label class="m"><input type="radio" name="menu"><span class="face"><span class="tick"></span>Family-style sharing plates<span class="price">from €38 pp</span></span></label>
+      <label class="m"><input type="radio" name="menu"><span class="face"><span class="tick"></span>Not sure yet — advise me<span class="price">—</span></span></label>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-h">Add to your menu</div>
+    <div class="card-s">Select any that apply.</div>
+    <div class="menu">
+      <label class="m"><input type="checkbox"><span class="face"><span class="tick sq"></span>Welcome drinks &amp; canapés<span class="price">+ €12 pp</span></span></label>
+      <label class="m"><input type="checkbox" checked><span class="face"><span class="tick sq"></span>Dessert table<span class="price">+ €9 pp</span></span></label>
+      <label class="m"><input type="checkbox"><span class="face"><span class="tick sq"></span>Service staff &amp; waiting<span class="price">on request</span></span></label>
+      <label class="m"><input type="checkbox"><span class="face"><span class="tick sq"></span>Crockery &amp; glassware hire<span class="price">on request</span></span></label>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-h">Anything we should know?</div>
+    <div class="card-s">Allergies, venue quirks, a dish you love.</div>
+    <div class="f"><textarea rows="4" placeholder="Two guests are coeliac, and the venue has no gas hob…"></textarea></div>
+  </div>
+
+  <button class="go" type="submit">Send my enquiry</button>
+  <div class="note">No obligation — we'll reply with a proposal, not a hard sell.</div>
+</form>
+</body>
+</html>
